@@ -47,7 +47,7 @@ fun main() {
         println("¡Bienvenido al sistema de compra de entradas del Parque de Diversiones!")
         println("Por favor, sigue las instrucciones para obtener el precio de tus entradas.")
 
-        // Preguntar cuántas entradas desea comprar, con un máximo de 5
+        // Para hacer mas facil el funcionamiento limito el numero de entradas a 5, o puede que tenga un ciclo gigante.
         var cantidadEntradas: Int? = null
         while (cantidadEntradas == null || cantidadEntradas !in 1..5) {
             println("¿Cuántas entradas desea comprar? (Máximo 5 entradas):")
@@ -122,22 +122,22 @@ fun main() {
                 }
             }
 
-            // Calcular el precio de la entrada y acumular en el total a pagar
+            // Calculamos el precio de la entrada y acumular en el total a pagar
             val (precioEntrada, descuento) = calcularPrecioEntrada(edad, diaSemana)
             totalAPagar += precioEntrada
 
-            // Agregar los detalles de la entrada a la lista con el número de entrada
+            // Detalles de la entrada a la lista con el número de entrada
             detallesEntradas.add("Entrada $i: Edad: $edad, Día: $diaSemana, Precio: ${formatNumber(precioEntrada)}, Descuento: $descuento")
         }
 
-        // Mostrar el detalle de cada entrada y el total a pagar
+        // Detalle de cada entrada y el total a pagar
         println("\n--- Detalles de las entradas ---")
         for (detalle in detallesEntradas) {
             println(detalle)
         }
         println("\nEl total a pagar por $cantidadEntradas entradas es: ${formatNumber(totalAPagar)}.")
 
-        // Preguntar qué desea hacer a continuación
+        // Qué desea hacer a continuación
         var opcionFinal: String? = null
         while (opcionFinal == null) {
             println("\n¿Qué desea hacer ahora?")

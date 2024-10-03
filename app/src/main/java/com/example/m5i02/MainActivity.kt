@@ -1,3 +1,5 @@
+package com.example.m5ei02
+
 import java.text.DecimalFormat
 
 fun formatNumber(number: Int): String {
